@@ -8,12 +8,7 @@ exports[`renders homepage unchanged 1`] = `
     <h1
       class="title"
     >
-      Welcome to 
-      <a
-        href="https://nextjs.org"
-      >
-        Next.js!
-      </a>
+      Welcome to pokemons!
     </h1>
     <div>
       <button

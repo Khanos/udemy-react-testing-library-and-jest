@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 
-export const useFectch = (url) => {
+interface Props {
+  url: string;
+}
+export const useFectch = ({url}: Props) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
