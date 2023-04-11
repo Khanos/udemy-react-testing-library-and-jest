@@ -1,7 +1,6 @@
 import {rest} from 'msw'
 import {setupServer} from 'msw/node'
-import { render, screen, waitFor } from '@testing-library/react'
-import { act } from 'react-dom/test-utils';
+import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import Home from '@/pages/index'
 import { pokemonResponse, polemonDetailResponse } from '../mocks/data'
@@ -32,10 +31,8 @@ describe('Home', () => {
 
   it('shows 12 pokemons cards', async() => {
     render(<Home />);
-    waitFor(async() => {
-      const cards = await screen.findAllByTestId('pokemon-card')
-      expect(cards).toHaveLength(12);
-    });
+    const cards = await screen.findAllByTestId('pokemon-card')
+    expect(cards).toHaveLength(12);
   });
 
   it('should render 24 pokemon cards after load more button is clicked', async() => {
@@ -48,13 +45,8 @@ describe('Home', () => {
     const cards = await screen.findAllByTestId('pokemon-card')
     expect(cards).toHaveLength(12);
 
-    await act(() => {
-      userEvent.click(loadMoreButton)
-    });
-    waitFor(async() => {
-      const newCards = await screen.findAllByTestId('pokemon-card')
-      expect(newCards).toHaveLength(24);
-    });
-
+    await userEvent.click(loadMoreButton);
+    const newCards = await screen.findAllByTestId('pokemon-card')
+    expect(newCards).toHaveLength(24);
   });
 })

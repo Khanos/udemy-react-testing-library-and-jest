@@ -10,6 +10,32 @@ exports[`renders homepage unchanged 1`] = `
     >
       Welcome to pokemons!
     </h1>
+    <div
+      class="form-container"
+    >
+      <form>
+        <label>
+          Search:
+          <input
+            class="form-input"
+            data-testid="search-input"
+            type="text"
+            value=""
+          />
+        </label>
+        <div
+          class="form-button-container"
+        >
+          <button
+            class="form-button"
+            data-testid="search-button"
+            type="submit"
+          >
+            Search
+          </button>
+        </div>
+      </form>
+    </div>
     <div>
       <button
         class="card-button"

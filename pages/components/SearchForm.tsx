@@ -28,10 +28,11 @@ export default function SearchForm({searchPokemons, resetSearch, search, setSear
             type="text"
             value={search}
             onChange={handleChange}
+            data-testid='search-input'
           />
         </label>
         <div className={styles['form-button-container']}>
-          <button type='submit' className={styles['form-button']}>Search</button>
+          <button type='submit' className={styles['form-button']} data-testid='search-button'>Search</button>
         </div>
       </form>
     </div>

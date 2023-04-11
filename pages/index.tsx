@@ -42,7 +42,6 @@ export default function Home() {
   const pokemons = filteredPokemons.length > 0 ? filteredPokemons : apiPokemons;
   useEffect(() => {
     getFirstPokemons();
-    console.log('component rendered')
   }, []);
   return (
     <>
