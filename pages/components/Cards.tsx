@@ -16,7 +16,7 @@ export default function Cards({items}: Props) {
       </div>
       <div className={styles['cards-container']}>
         {items && items.map(( item:Pokemon, index ) => (
-          <Card key={ index } item={ item } />
+          <Card key={ index } item={ item } data-testid="pokemon-card" />
         ))}
       </div>
     </div>
