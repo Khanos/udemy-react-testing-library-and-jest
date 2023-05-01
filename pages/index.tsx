@@ -56,12 +56,8 @@ export default function Home() {
           Welcome to pokemons!
         </h1>
         {message && <h4 className={styles.message}>{message}</h4>}
-        <SearchForm search={search} setSearch={setSearch} searchPokemons={searchPokemons} resetSearch={resetSearch}/>
+        <SearchForm search={search} setSearch={setSearch} searchPokemons={searchPokemons} resetSearch={resetSearch} getNextPokemons={getNextPokemons} nextUrl={nextUrl}/>
         {pokemons.length > 0 && <Cards items={pokemons}/>}
-        {nextUrl && 
-        <div>
-          <button onClick={getNextPokemons} className={styles['card-button']}>Load More</button>
-        </div>}
       </main>
     </>
   )

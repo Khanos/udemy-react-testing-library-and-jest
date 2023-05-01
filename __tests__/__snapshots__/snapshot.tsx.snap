@@ -33,15 +33,14 @@ exports[`renders homepage unchanged 1`] = `
           >
             Search
           </button>
+          <button
+            class="form-button"
+            type="button"
+          >
+            Load More
+          </button>
         </div>
       </form>
-    </div>
-    <div>
-      <button
-        class="card-button"
-      >
-        Load More
-      </button>
     </div>
   </main>
 </div>

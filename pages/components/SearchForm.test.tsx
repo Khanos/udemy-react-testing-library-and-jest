@@ -61,4 +61,13 @@ describe('SearchForm', () => {
     await userEvent.clear(searchInput);
     expect(resetSearch).toHaveBeenCalled();
   });
+
+  it('should call getNextPokemons when the load more button is clicked', async() => {
+    const getNextPokemons = jest.fn();
+    const nextUrl = 'https://pokeapi.co/api/v2/pokemon?offset=20&limit=20';
+    const { user, wrapper } = setup({getNextPokemons, nextUrl});
+    const loadMoreButton = wrapper.getByText('Load More');
+    await user.click(loadMoreButton);
+    expect(getNextPokemons).toHaveBeenCalled();
+  });
 });

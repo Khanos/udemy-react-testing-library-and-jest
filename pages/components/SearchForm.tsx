@@ -6,8 +6,10 @@ interface Props {
   resetSearch: () => void;
   search: string;
   setSearch: (search: string) => void;
+  getNextPokemons: () => void;
+  nextUrl: string;
 }
-export default function SearchForm({searchPokemons, resetSearch, search, setSearch}: Props) {
+export default function SearchForm({searchPokemons, resetSearch, search, setSearch, getNextPokemons, nextUrl}: Props) {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     searchPokemons(search);
@@ -33,6 +35,7 @@ export default function SearchForm({searchPokemons, resetSearch, search, setSear
         </label>
         <div className={styles['form-button-container']}>
           <button type='submit' className={styles['form-button']} data-testid='search-button'>Search</button>
+          {nextUrl && <button type="button" onClick={getNextPokemons} className={styles['form-button']}>Load More</button>}
         </div>
       </form>
     </div>
