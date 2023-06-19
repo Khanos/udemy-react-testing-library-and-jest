@@ -27,3 +27,9 @@ pnpm create next-app --example with-jest with-jest-app
 ```bash
 npm test
 ```
+
+In order to run the notes files to access the rtl-book library you need to run the following command
+
+```bash
+npx rtl-book serve query-notes.js
+```
